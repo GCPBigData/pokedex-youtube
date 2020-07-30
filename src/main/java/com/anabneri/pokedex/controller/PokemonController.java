@@ -5,6 +5,7 @@ import com.anabneri.pokedex.model.PokemonEvent;
 import com.anabneri.pokedex.repository.PokedexRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -21,10 +22,10 @@ import java.time.Duration;
 @Slf4j
 public class PokemonController {
 
+    @Autowired
     private PokedexRepository pokedexRepository;
-    public PokemonController(PokedexRepository repository) { this.pokedexRepository = repository; }
 
-    @GetMapping
+    @GetMapping(value = "/stream/pokemon", produces = MediaType.APPLICATION_STREAM_JSON_VALUE)
     public Flux<Pokemon> getAllPokemons() {return pokedexRepository.findAll();}
 
     @GetMapping("/{id}")

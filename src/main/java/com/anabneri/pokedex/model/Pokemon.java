@@ -1,5 +1,6 @@
 package com.anabneri.pokedex.model;
 
+import jdk.jshell.Snippet;
 import lombok.*;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -16,4 +17,4 @@ public class Pokemon {
     String habilidade;
     Double peso;
 
- }
+}
