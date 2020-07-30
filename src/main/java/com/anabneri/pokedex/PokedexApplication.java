@@ -16,7 +16,7 @@ public class PokedexApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(PokedexApplication.class, args);
 	}
-
+/*
 	@Bean
 	CommandLineRunner init (ReactiveMongoOperations operations,
 							PokedexRepository repository) {
@@ -34,6 +34,6 @@ public class PokedexApplication {
 					.subscribe(System.out::println);
 		};
 	}
-
+*/
 
 }
